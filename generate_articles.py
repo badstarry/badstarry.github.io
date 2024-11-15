@@ -11,21 +11,23 @@ def read_markdown(md_path):
     with open(md_path, 'r', encoding='utf-8') as file:
         return file.read()
 
-def generate_html(template, title, content, output_path):
+def generate_html(template, nav, title, content, output_path):
     """生成 HTML 文件"""
     content_html = markdown.markdown(content)
-    html = template.replace('{{title}}', title).replace('{{content}}', content_html)
+    html = template.replace('{{title}}', title).replace('{{content}}', content_html).replace('{{nav}}', nav)
     with open(output_path, 'w', encoding='utf-8') as file:
         file.write(html)
 
 def main():
     """主函数，生成所有文章的 HTML 文件"""
     template_path = 'templates/article-template.html'
+    nav_template_path = 'templates/nav-template.html'
     articles_dir = 'articles'
     output_dir = 'articles'
 
     # 读取模板
     template = read_template(template_path)
+    nav = read_template(nav_template_path)
 
     # 遍历文章目录中的所有 Markdown 文件
     for filename in os.listdir(articles_dir):
@@ -34,7 +36,7 @@ def main():
             content = read_markdown(md_path)
             title = content.split('\n')[0].lstrip('# ').strip()  # 提取标题
             output_path = os.path.join(output_dir, filename.replace('.md', '.html'))
-            generate_html(template, title, content, output_path)
+            generate_html(template, nav, title, content, output_path)
             print(f'Generated {output_path}')
 
 if __name__ == '__main__':
