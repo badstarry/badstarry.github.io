@@ -10,7 +10,14 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: url('https://source.unsplash.com/1600x900/daily') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            background-attachment: fixed;
+        }
+        .overlay {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
         }
         .container {
             width: 80%;
@@ -18,8 +25,8 @@
             overflow: hidden;
         }
         header {
-            background: #35424a;
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
             padding-top: 30px;
             min-height: 70px;
             border-bottom: #e8491d 3px solid;
@@ -34,14 +41,14 @@
             margin-top: 10px;
         }
         nav a {
-            color: #ffffff;
+            color: #333;
             text-decoration: none;
             font-size: 1.5em;
             margin-left: 15px;
         }
         .content {
             padding: 20px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.8);
             margin-top: 20px;
         }
         .post {
@@ -76,7 +83,7 @@
             margin-bottom: 10px;
         }
         .contact a {
-            color: #35424a;
+            color: #333;
             text-decoration: none;
             font-size: 1.2em;
             margin-right: 15px;
@@ -101,15 +108,15 @@
         footer {
             text-align: center;
             padding: 10px;
-            background: #35424a;
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
             margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container overlay">
             <h1>我的博客</h1>
             <nav>
                 <a href="#home">首页</a>
@@ -119,7 +126,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container overlay">
         <div class="content">
             <div class="post">
                 <h2><a href="article1.html">第一篇博客文章</a></h2>
@@ -160,15 +167,15 @@
             <div class="videos">
                 <h2>我喜欢的视频</h2>
                 <div class="video">
-                    <iframe src="https://www.bilibili.com/video/BV1Re2wYHEPh?p=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV123456789&page=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <p>视频 1 的描述</p>
                 </div>
                 <div class="video">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV234567890&page=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <p>视频 2 的描述</p>
                 </div>
                 <div class="video">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV345678901&page=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <p>视频 3 的描述</p>
                 </div>
             </div>
