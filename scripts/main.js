@@ -1,6 +1,3 @@
-import marked from 'marked';
-
-// 等待DOM内容加载完成
 document.addEventListener('DOMContentLoaded', () => {
     // 定义一个函数来加载导航栏模板
     const loadNavbar = async () => {
@@ -25,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Network response was not ok');
             }
             const data = await response.text();
-            
+
             // 解析Markdown内容
             const lines = data.split('\n');
             const title = lines[0].replace(/^#\s*/, '').trim(); // 使用正则表达式更精确地匹配标题
