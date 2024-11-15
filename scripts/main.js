@@ -1,3 +1,5 @@
+import marked from 'marked';
+
 document.addEventListener('DOMContentLoaded', function() {
     // 加载导航栏
     fetch('/templates/nav-template.html')
