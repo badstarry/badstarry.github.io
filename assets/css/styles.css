@@ -1,52 +1,77 @@
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  color: #333;
+    font-family: 'DouyinSansBold', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 header {
-  background: #333;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
 }
 
 header h1 {
-  margin: 0;
+    margin: 0;
+    font-size: 2em;
 }
 
 nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
 }
 
-main {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.content {
+    margin-top: 20px;
 }
 
-article h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
+.post, .video {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
 
-article time {
-  color: #999;
-  font-size: 0.8em;
-  margin-bottom: 20px;
-  display: block;
+.post h2, .video h2 {
+    margin-top: 0;
+}
+
+.toggle-button {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    margin-top: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.expanded .toggle-button {
+    position: relative;
+    top: 10px;
+}
+
+.expandable {
+    display: none;
+}
+
+.expanded .expandable {
+    display: block;
 }
 
 footer {
-  text-align: center;
-  padding: 10px 0;
-  background: #333;
-  color: #fff;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
 }
