@@ -95,8 +95,9 @@ function showContact() {
         <section class="contact">
             <h2>联系我</h2>
             <a href="mailto:your-email@example.com">发邮件</a>
-            <a href="https://twitter.com/your-twitter-handle">Twitter</a>
-            <a href="https://github.com/your-github-username">GitHub</a>
+            <a href="https://www.twitch.tv/badstarry">twitch</a>
+            <a href="https://github.com/badstarry">GitHub</a>
+            <a href="https://steamcommunity.com/profiles/76561199755976097/">steam</a>
         </section>
     `;
 }
