@@ -1,3 +1,15 @@
+// 自定义选项
+const options = {
+  gfm: true, // 启用 GitHub Flavored Markdown
+  pedantic: false, // 符合更严格的 Markdown 规范
+  sanitize: true, // 清理输出的 HTML（防止 XSS 攻击）
+  highlight: function(code, lang) {
+    // 在这里可以添加代码高亮逻辑
+    const validLanguage = hljs.getLanguage(lang) ? lang : 'plaintext';
+    return hljs.highlight(validLanguage, code).value;
+  }
+};
+
 // 读取文章内容
 function loadArticle(articleName) {
     fetch(`articles/${articleName}.md`)
@@ -13,7 +25,7 @@ function loadArticle(articleName) {
             const title = titleMatch ? titleMatch[1] : "未命名文章";
 
             // 将 Markdown 转换为 HTML
-            const htmlContent = marked.parse(content);
+            const htmlContent = marked.parse(content, options);
 
             // 渲染文章内容
             document.getElementById('content').innerHTML = `
@@ -24,6 +36,11 @@ function loadArticle(articleName) {
                     </div>
                 </article>
             `;
+
+            // 初始化代码高亮
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
         })
         .catch(error => {
             console.error(`无法加载文章 ${articleName}:`, error);
