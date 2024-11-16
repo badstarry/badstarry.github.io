@@ -1,0 +1,2 @@
+baseurl: "" # 如果你的仓库是 https://github.com/username/username.github.io，则 baseurl 为空字符串
+url: "badstarry.github.io" # 替换为你的 GitHub Pages URL
