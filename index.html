@@ -6,6 +6,7 @@
     <title>我的博客</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/dymh/dist/DouyinSansBold/result.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
@@ -13,7 +14,7 @@
             <h1>我的博客</h1>
             <nav>
                 <a href="#/" onclick="showPosts()">首页</a>
-                <a href="#" onclick="loadArticle('article1')">文章</a>
+                <a href="#/articles" onclick="loadArticles()">文章</a>
                 <a href="#/favorites" onclick="showFavorites()">收藏夹</a>
                 <a href="#/contact" onclick="showContact()">联系我</a>
                 <a href="#/videos" onclick="showVideos()">喜欢的视频</a>
