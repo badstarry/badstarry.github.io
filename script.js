@@ -51,7 +51,7 @@ function loadArticle(articleName) {
 // 显示文章列表
 function showPosts() {
     document.getElementById('content').innerHTML = `
-        <section class="posts">
+        <section id="posts" class="posts">
             <div class="post">
                 <h2><a href="#/article1" onclick="loadArticle('article1')">第一篇博客文章</a></h2>
                 <p>这是我的第一篇博客文章。在这里，我会分享一些有趣的内容和想法。</p>
@@ -82,7 +82,7 @@ function showPosts() {
 // 显示收藏夹
 function showFavorites() {
     document.getElementById('content').innerHTML = `
-        <section class="favorites">
+        <section id="favorites" class="favorites">
             <h2>我的收藏夹</h2>
             <div class="post">
                 <h2><a href="#/favorite1">最喜欢的博客文章 1</a></h2>
@@ -126,7 +126,7 @@ function showContact() {
 // 显示喜欢的视频
 function showVideos() {
     document.getElementById('content').innerHTML = `
-        <section class="videos">
+        <section id="videos" class="videos">
             <h2>我喜欢的视频</h2>
             <div class="video">
                 <a href="https://m.bilibili.com/video/BV1Re2wYHEPh?vd_source=181af9ae4f258abb2732cf48ed091135" target="_blank">ネバーランド feat. 初音ミク</a>
@@ -155,7 +155,12 @@ window.onload = showPosts;
 
 // 展开和折叠功能
 function toggleExpand(sectionId) {
-    const section = document.querySelector(`#${sectionId}`);
+    const section = document.getElementById(sectionId);
+    if (!section) {
+        console.error(`Section with ID ${sectionId} not found.`);
+        return;
+    }
+
     const expandable = section.querySelector('.expandable');
     const button = section.querySelector('.toggle-button');
 
