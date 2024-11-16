@@ -3,75 +3,149 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background: url('/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
 }
 
 .container {
     width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid #e8491d;
+    margin-bottom: 20px;
 }
 
 header h1 {
+    font-size: 2.5em;
     margin: 0;
-    font-size: 2em;
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
 }
 
 nav a {
-    color: white;
+    color: #333;
     text-decoration: none;
-    margin-right: 15px;
+    font-size: 1.5em;
+    margin: 0 15px;
 }
 
 .content {
-    margin-top: 20px;
+    padding: 20px;
 }
 
-.post, .video {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
+.post {
+    margin-bottom: 20px;
 }
 
-.post h2, .video h2 {
-    margin-top: 0;
+.post h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
-.toggle-button {
-    cursor: pointer;
-    color: blue;
+.post p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.post a {
+    color: #e8491d;
+    text-decoration: none;
+}
+
+.post a:hover {
     text-decoration: underline;
-    margin-top: 10px;
-    display: inline-block;
-    transition: all 0.3s ease;
 }
 
-.expanded .toggle-button {
-    position: relative;
-    top: 10px;
+.favorites {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
 }
 
-.expandable {
-    display: none;
+.favorites h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
 
-.expanded .expandable {
+.favorites .post {
+    margin-bottom: 15px;
+}
+
+.contact {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.contact h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-right: 15px;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.videos {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.videos h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.video {
+    margin-bottom: 15px;
+}
+
+.video a {
     display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.video a:hover {
+    background: rgba(255, 255, 255, 1);
 }
 
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
     margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
