@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的博客</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/dymh/dist/DouyinSansBold/result.css">
 </head>
 <body>
@@ -12,65 +12,29 @@
         <div class="container">
             <h1>我的博客</h1>
             <nav>
-                <a href="/">首页</a>
-                <a href="/articles/">文章</a>
-                <a href="/favorites/">收藏夹</a>
-                <a href="/contact/">联系我</a>
-                <a href="/videos/">喜欢的视频</a>
+                <a href="#/" onclick="showPosts()">首页</a>
+                <a href="#/articles" onclick="loadArticles()">文章</a>
+                <a href="#/favorites" onclick="showFavorites()">收藏夹</a>
+                <a href="#/contact" onclick="showContact()">联系我</a>
+                <a href="#/videos" onclick="showVideos()">喜欢的视频</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <div class="content">
+        <div class="content" id="content">
             <section class="posts">
                 <div class="post">
-                    <h2><a href="/article1.html">第一篇博客文章</a></h2>
+                    <h2><a href="#/article1" onclick="loadArticle('article1')">第一篇博客文章</a></h2>
                     <p>这是我的第一篇博客文章。在这里，我会分享一些有趣的内容和想法。</p>
                 </div>
                 <div class="post">
-                    <h2><a href="/article2.html">第二篇博客文章</a></h2>
+                    <h2><a href="#/article2" onclick="loadArticle('article2')">第二篇博客文章</a></h2>
                     <p>这是我的第二篇博客文章。在这篇文章中，我将继续分享更多的内容和见解。</p>
                 </div>
                 <div class="post">
-                    <h2><a href="/article3.html">第三篇博客文章</a></h2>
+                    <h2><a href="#/article3" onclick="loadArticle('article3')">第三篇博客文章</a></h2>
                     <p>这是我的第三篇博客文章。每一篇文章都是我对某个主题的深入思考和总结。</p>
-                </div>
-            </section>
-
-            <section class="favorites">
-                <h2>我的收藏夹</h2>
-                <div class="post">
-                    <h2><a href="/favorite1.html">最喜欢的博客文章 1</a></h2>
-                    <p>这是我非常喜欢的一篇文章，内容非常丰富，值得一读。</p>
-                </div>
-                <div class="post">
-                    <h2><a href="/favorite2.html">最喜欢的博客文章 2</a></h2>
-                    <p>这篇文章探讨了一个非常有趣的话题，提供了很多有价值的见解。</p>
-                </div>
-                <div class="post">
-                    <h2><a href="/favorite3.html">最喜欢的博客文章 3</a></h2>
-                    <p>这篇文章对我影响很大，改变了我对某些问题的看法。</p>
-                </div>
-            </section>
-
-            <section class="contact">
-                <h2>联系我</h2>
-                <a href="mailto:your-email@example.com">发邮件</a>
-                <a href="https://twitter.com/your-twitter-handle">Twitter</a>
-                <a href="https://github.com/your-github-username">GitHub</a>
-            </section>
-
-            <section class="videos">
-                <h2>我喜欢的视频</h2>
-                <div class="video">
-                    <a href="https://m.bilibili.com/video/BV1Re2wYHEPh?vd_source=181af9ae4f258abb2732cf48ed091135" target="_blank">ネバーランド feat. 初音ミク</a>
-                </div>
-                <div class="video">
-                    <a href="https://www.bilibili.com/video/BV234567890" target="_blank">视频 2 的描述</a>
-                </div>
-                <div class="video">
-                    <a href="https://www.bilibili.com/video/BV345678901" target="_blank">视频 3 的描述</a>
                 </div>
             </section>
         </div>
@@ -79,5 +43,7 @@
     <footer>
         <p>版权所有 &copy; 2024 我的博客</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
