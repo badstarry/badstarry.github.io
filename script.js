@@ -13,7 +13,7 @@ function loadArticle(articleName) {
             const title = titleMatch ? titleMatch[1] : "未命名文章";
 
             // 将 Markdown 转换为 HTML
-            const htmlContent = marked(content);
+            const htmlContent = marked.parse(content);
 
             // 渲染文章内容
             document.getElementById('content').innerHTML = `
