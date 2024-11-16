@@ -167,8 +167,10 @@ function toggleExpand(sectionId) {
     if (expandable.style.display === 'block') {
         expandable.style.display = 'none';
         button.textContent = '更多' + sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+        section.classList.remove('expanded');
     } else {
         expandable.style.display = 'block';
         button.textContent = '收起' + sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+        section.classList.add('expanded');
     }
 }
