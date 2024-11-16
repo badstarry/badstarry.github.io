@@ -1,3 +1,4 @@
+// 自定义选项
 const options = {
   gfm: true, // 启用 GitHub Flavored Markdown
   pedantic: false, // 符合更严格的 Markdown 规范
@@ -10,8 +11,8 @@ const options = {
 };
 
 // 读取文章内容
-function loadArticle(articleName, folder = 'articles') {
-    fetch(`${folder}/${articleName}.md`)
+function loadArticle(articleName) {
+    fetch(`articles/${articleName}.md`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -47,63 +48,45 @@ function loadArticle(articleName, folder = 'articles') {
         });
 }
 
-// 动态获取文章列表
-function fetchArticles(folder) {
-    return fetch(`/${folder}/`)
-        .then(response => response.json())
-        .then(data => data.articles.map(article => ({
-            id: article,
-            title: article.replace(/\.md$/, ''),
-            excerpt: '这是文章的简短摘要'
-        })))
-        .catch(error => {
-            console.error('无法获取文章列表:', error);
-            return [];
-        });
-}
-
 // 显示文章列表
 function showPosts() {
-    fetchArticles('articles').then(articles => {
-        const content = document.getElementById('content');
-        content.innerHTML = `
-            <section class="posts">
-                ${articles.map(article => `
-                    <div class="post">
-                        <h2><a href="#/${article.id}" onclick="loadArticle('${article.id}', 'articles')">${article.title}</a></h2>
-                        <p>${article.excerpt}</p>
-                    </div>
-                `).join('')}
-                <button class="toggle-button" onclick="toggleExpand('posts')">更多文章</button>
-                <div class="expandable">
-                    ${articles.slice(3).map(article => `
-                        <div class="post">
-                            <h2><a href="#/${article.id}" onclick="loadArticle('${article.id}', 'articles')">${article.title}</a></h2>
-                            <p>${article.excerpt}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            </section>
-        `;
-    });
+    document.getElementById('content').innerHTML = `
+        <section class="posts">
+            <div class="post">
+                <h2><a href="#/article1" onclick="loadArticle('article1')">第一篇博客文章</a></h2>
+                <p>这是我的第一篇博客文章。在这里，我会分享一些有趣的内容和想法。</p>
+            </div>
+            <div class="post">
+                <h2><a href="#/article2" onclick="loadArticle('article2')">第二篇博客文章</a></h2>
+                <p>这是我的第二篇博客文章。在这篇文章中，我将继续分享更多的内容和见解。</p>
+            </div>
+            <div class="post">
+                <h2><a href="#/article3" onclick="loadArticle('article3')">第三篇博客文章</a></h2>
+                <p>这是我的第三篇博客文章。每一篇文章都是我对某个主题的深入思考和总结。</p>
+            </div>
+        </section>
+    `;
 }
 
 // 显示收藏夹
 function showFavorites() {
-    fetchArticles('favorites').then(favorites => {
-        const content = document.getElementById('content');
-        content.innerHTML = `
-            <section class="favorites">
-                <h2>我的收藏夹</h2>
-                ${favorites.map(favorite => `
-                    <div class="post">
-                        <h2><a href="#/${favorite.id}" onclick="loadArticle('${favorite.id}', 'favorites')">${favorite.title}</a></h2>
-                        <p>${favorite.excerpt}</p>
-                    </div>
-                `).join('')}
-            </section>
-        `;
-    });
+    document.getElementById('content').innerHTML = `
+        <section class="favorites">
+            <h2>我的收藏夹</h2>
+            <div class="post">
+                <h2><a href="#/favorite1">最喜欢的博客文章 1</a></h2>
+                <p>这是我非常喜欢的一篇文章，内容非常丰富，值得一读。</p>
+            </div>
+            <div class="post">
+                <h2><a href="#/favorite2">最喜欢的博客文章 2</a></h2>
+                <p>这篇文章探讨了一个非常有趣的话题，提供了很多有价值的见解。</p>
+            </div>
+            <div class="post">
+                <h2><a href="#/favorite3">最喜欢的博客文章 3</a></h2>
+                <p>这篇文章对我影响很大，改变了我对某些问题的看法。</p>
+            </div>
+        </section>
+    `;
 }
 
 // 显示联系方式
@@ -138,17 +121,3 @@ function showVideos() {
 
 // 默认显示文章列表
 window.onload = showPosts;
-
-// 切换展开和收起
-function toggleExpand(sectionId) {
-    const section = document.querySelector(`.${sectionId}`);
-    section.classList.toggle('expanded');
-
-    // 更新按钮文本
-    const toggleButton = section.querySelector('.toggle-button');
-    if (section.classList.contains('expanded')) {
-        toggleButton.textContent = '收起文章';
-    } else {
-        toggleButton.textContent = '更多文章';
-    }
-}
