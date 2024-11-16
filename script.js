@@ -1,10 +1,12 @@
-// 引入 marked 库用于解析 Markdown
-const marked = require('marked');
-
 // 读取文章内容
 function loadArticle(articleName) {
     fetch(`articles/${articleName}.md`)
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(content => {
             // 提取文章标题
             const titleMatch = content.match(/^# (.+)/);
