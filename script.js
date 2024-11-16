@@ -167,26 +167,8 @@ function toggleExpand(sectionId) {
     if (expandable.style.display === 'block') {
         expandable.style.display = 'none';
         button.textContent = '更多' + sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
-        section.classList.remove('expanded');
     } else {
         expandable.style.display = 'block';
         button.textContent = '收起' + sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
-        section.classList.add('expanded');
     }
 }
-document.addEventListener("DOMContentLoaded", function () {
-    var toggleButton = document.querySelector(".toggle-button");
-    var toggleContainer = document.querySelector(".toggle-container");
-
-    toggleButton.addEventListener("click", function () {
-        toggleContainer.classList.toggle("open");
-        
-        // 更新按钮文本
-        if (toggleContainer.classList.contains("open")) {
-            toggleButton.textContent = "收起";
-        } else {
-            toggleButton.textContent = "展开";
-        }
-    });
-});
-
