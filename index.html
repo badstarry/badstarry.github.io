@@ -9,6 +9,19 @@
     <script src="https://unpkg.com/marked@4.0.13/lib/marked.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <style>
+        .expandable {
+            display: none;
+        }
+        .expanded .expandable {
+            display: block;
+        }
+        .toggle-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -38,6 +51,17 @@
                 <div class="post">
                     <h2><a href="#/article3" onclick="loadArticle('article3')">第三篇博客文章</a></h2>
                     <p>这是我的第三篇博客文章。每一篇文章都是我对某个主题的深入思考和总结。</p>
+                </div>
+                <button class="toggle-button" onclick="toggleExpand('posts')">更多文章</button>
+                <div class="expandable">
+                    <div class="post">
+                        <h2><a href="#/article4" onclick="loadArticle('article4')">第四篇博客文章</a></h2>
+                        <p>这是我的第四篇博客文章。在这里，我会分享一些有趣的内容和想法。</p>
+                    </div>
+                    <div class="post">
+                        <h2><a href="#/article5" onclick="loadArticle('article5')">第五篇博客文章</a></h2>
+                        <p>这是我的第五篇博客文章。在这篇文章中，我将继续分享更多的内容和见解。</p>
+                    </div>
                 </div>
             </section>
         </div>
