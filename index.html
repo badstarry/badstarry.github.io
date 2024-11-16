@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
     <script src="https://unpkg.com/marked@4.0.13/lib/marked.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <style>
+        /* 樱花图片路径 */
+        #canvas_sakura {
+            position: fixed;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            z-index: 1000; /* 确保樱花层在最顶层 */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -46,6 +56,12 @@
         <p>Copyright © 2024 badstarry styles. All Rights Reserved</p>
     </footer>
     <script src="script.js"></script>
-    <script src="prin.js"></script>
+    <script src="sakura.js"></script>
+    <script>
+        // 确保图片加载完成后启动樱花动画
+        window.onload = function() {
+            startSakura();
+        };
+    </script>
 </body>
 </html>
