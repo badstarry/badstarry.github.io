@@ -174,3 +174,19 @@ function toggleExpand(sectionId) {
         section.classList.add('expanded');
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    var toggleButton = document.querySelector(".toggle-button");
+    var toggleContainer = document.querySelector(".toggle-container");
+
+    toggleButton.addEventListener("click", function () {
+        toggleContainer.classList.toggle("open");
+        
+        // 更新按钮文本
+        if (toggleContainer.classList.contains("open")) {
+            toggleButton.textContent = "收起";
+        } else {
+            toggleButton.textContent = "展开";
+        }
+    });
+});
+
