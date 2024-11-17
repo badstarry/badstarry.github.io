@@ -114,7 +114,7 @@ function showVideos() {
                 <a href="https://www.bilibili.com/video/BV1Zw4m1e7k1?spm_id_from=333.788.recommend_more_video.0&vd_source=181af9ae4f258abb2732cf48ed091135">好 feat. 初音ミク</a>
             </div>
             <div class="video">
-                <a href="https://www.bilibili.com/video/BV345678901" target="_blank">你~干~啥~呀~~~~</a>
+                <a href="https://www.bilibili.com/video/BV345678901" target="_blank">你~干~啥~呀~~~~  你~咋~这~样~啊~~~~</a>
             </div>
         </section>
     `;
