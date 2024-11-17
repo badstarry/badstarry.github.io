@@ -111,10 +111,10 @@ function showVideos() {
                 <a href="https://m.bilibili.com/video/BV1Re2wYHEPh?vd_source=181af9ae4f258abb2732cf48ed091135" target="_blank">ネバーランド feat. 初音ミク</a>
             </div>
             <div class="video">
-                <a href="https://www.bilibili.com/video/BV234567890" target="_blank">视频 2 的描述</a>
+                <a href="https://www.bilibili.com/video/BV1Zw4m1e7k1?spm_id_from=333.788.recommend_more_video.0&vd_source=181af9ae4f258abb2732cf48ed091135">好 feat. 初音ミク</a>
             </div>
             <div class="video">
-                <a href="https://www.bilibili.com/video/BV345678901" target="_blank">视频 3 的描述</a>
+                <a href="https://www.bilibili.com/video/BV345678901" target="_blank">M+7</a>
             </div>
         </section>
     `;
